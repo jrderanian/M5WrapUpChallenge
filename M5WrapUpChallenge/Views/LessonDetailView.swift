@@ -16,11 +16,26 @@ struct LessonDetailView: View {
     var body: some View {
         
         VStack{
+            
+            // to run locally...
+           // let urlPath = "/Users/drano/Downloads/L5ChallengeAssets"
+            //let thisVideo = urlPath + "/Lesson \(lesson.id)"
+            //VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "video", withExtension: "mp4")!))
+              //  .frame(height: 400)
+            
+            
+            if let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Lesson \(lesson.id)", ofType: "mp4")!){
+                VideoPlayer(player: AVPlayer(url: url))
+                    .cornerRadius(10)
+                    .frame(maxHeight: 300)
+            }
+            /*
             if let url = URL(string: lesson.url) {
                 VideoPlayer(player: AVPlayer(url: url))
                     .cornerRadius(10)
                     .frame(maxHeight: 300)
             }
+             */
             Button("Return to Home"){
                 lessonModel.gotoHomePage()
             }
@@ -36,7 +51,7 @@ struct LessonDetailView_Previews: PreviewProvider {
         //let model = AuthorModel()
         //DetailView(thisauthor: model.authors[0])
         
-        var lesson = lessons.lessons[1]
+        let lesson = lessons.lessons[1]
         LessonDetailView(lesson: lesson)
     }
 }
