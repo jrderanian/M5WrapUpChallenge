@@ -11,6 +11,9 @@
 		47763AB228F3B983009045A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AB128F3B983009045A3 /* ContentView.swift */; };
 		47763AB428F3B986009045A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47763AB328F3B986009045A3 /* Assets.xcassets */; };
 		47763AB728F3B986009045A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47763AB628F3B986009045A3 /* Preview Assets.xcassets */; };
+		47763ABF28F3BA16009045A3 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 47763ABE28F3BA16009045A3 /* Data.json */; };
+		47763AC428F3BB23009045A3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AC328F3BB23009045A3 /* Lesson.swift */; };
+		47763AC628F3BBED009045A3 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AC528F3BBED009045A3 /* LessonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		47763AB128F3B983009045A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47763AB328F3B986009045A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47763AB628F3B986009045A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		47763ABE28F3BA16009045A3 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		47763AC328F3BB23009045A3 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		47763AC528F3BBED009045A3 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				47763AAF28F3B983009045A3 /* M5WrapUpChallengeApp.swift */,
-				47763AB128F3B983009045A3 /* ContentView.swift */,
+				47763AC228F3BADF009045A3 /* Models */,
+				47763AC128F3BA41009045A3 /* ViewModels */,
+				47763AC028F3BA37009045A3 /* Views */,
+				47763ABD28F3B9AB009045A3 /* Resources */,
 				47763AB328F3B986009045A3 /* Assets.xcassets */,
 				47763AB528F3B986009045A3 /* Preview Content */,
 			);
@@ -65,6 +74,38 @@
 				47763AB628F3B986009045A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47763ABD28F3B9AB009045A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47763ABE28F3BA16009045A3 /* Data.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		47763AC028F3BA37009045A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47763AB128F3B983009045A3 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47763AC128F3BA41009045A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				47763AC528F3BBED009045A3 /* LessonModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		47763AC228F3BADF009045A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47763AC328F3BB23009045A3 /* Lesson.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +168,7 @@
 			files = (
 				47763AB728F3B986009045A3 /* Preview Assets.xcassets in Resources */,
 				47763AB428F3B986009045A3 /* Assets.xcassets in Resources */,
+				47763ABF28F3BA16009045A3 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47763AC428F3BB23009045A3 /* Lesson.swift in Sources */,
+				47763AC628F3BBED009045A3 /* LessonModel.swift in Sources */,
 				47763AB228F3B983009045A3 /* ContentView.swift in Sources */,
 				47763AB028F3B983009045A3 /* M5WrapUpChallengeApp.swift in Sources */,
 			);
