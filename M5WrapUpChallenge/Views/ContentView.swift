@@ -12,29 +12,27 @@ struct ContentView: View {
     @EnvironmentObject var lessonModel: LessonModel
     
     var body: some View {
-        VStack {
-            
-            NavigationStack(path: $lessonModel.path) {
-                        List{
-                            //Section("Lessons") {
-                                ForEach(lessonModel.lessons) {lesson in
-                                    NavigationLink(value: lesson) {
-                                        VStack(alignment: .leading) {
-                                            Text(lesson.title)
-                                        }
-                                    }
-                                    
-                                }
-                                
-                           // }
+        
+        NavigationStack(path: $lessonModel.path) {
+            //ScrollView {
+            List{
+                ForEach(lessonModel.lessons) {lesson in
+                    NavigationLink(value: lesson) {
+                        VStack(alignment: .leading) {
+                            Text(lesson.title)
+                                .bold()
                             
-                            
-                        }
-                        .navigationDestination(for: Lesson.self) { lesson in LessonDetailView(lesson: lesson)
                         }
                     }
+                    
+                }
+                
+            }.foregroundColor(.brown)
+                .navigationTitle("Welcome to Swift")
+            .navigationDestination(for: Lesson.self) { lesson in LessonDetailView(lesson: lesson)
+            }
         }
-        .padding()
+        //.foregroundColor(.red)
     }
 }
 
