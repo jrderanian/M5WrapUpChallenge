@@ -30,6 +30,16 @@ struct ContentView: View {
             }.foregroundColor(.brown)
                 .navigationTitle("Welcome to Swift")
             .navigationDestination(for: Lesson.self) { lesson in LessonDetailView(lesson: lesson)
+                    
+            }
+            //.frame(maxWidth: .infinity)
+            // Found this at https://stackoverflow.com/questions/68093282/remove-top-padding-from-list-in-swiftui
+            // expands the list to the parent
+            .listStyle(.grouped)
+            .onAppear {
+              let tableHeaderView = UIView(frame: .zero)
+              tableHeaderView.frame.size.height = 1
+              UITableView.appearance().tableHeaderView = tableHeaderView
             }
         }
         //.foregroundColor(.red)
