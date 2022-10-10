@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LessonModel: ObservableObject {
     
+    @Published var path = NavigationPath()
     @Published var lessons = [Lesson]()
     
     init() {
@@ -38,12 +40,14 @@ class LessonModel: ObservableObject {
             // Assign parsed modules to modules property
             self.lessons = lessons
         }
-    catch {
-        // TODO log error
-        print("Couldn't parse local data")
+        catch {
+            // TODO log error
+            print("Couldn't parse local data")
+        }
     }
-        
-        
+    
+    func gotoHomePage() {
+        path.removeLast(path.count)
     }
     
 }

@@ -8,12 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var lessonModel: LessonModel
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            NavigationStack(path: $lessonModel.path) {
+                        List{
+                            //Section("Lessons") {
+                                ForEach(lessonModel.lessons) {lesson in
+                                    NavigationLink(value: lesson) {
+                                        VStack(alignment: .leading) {
+                                            Text(lesson.title)
+                                        }
+                                    }
+                                    
+                                }
+                                
+                           // }
+                            
+                            
+                        }
+                        .navigationDestination(for: Lesson.self) { lesson in LessonDetailView(lesson: lesson)
+                        }
+                    }
         }
         .padding()
     }
@@ -21,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(LessonModel())
     }
 }
