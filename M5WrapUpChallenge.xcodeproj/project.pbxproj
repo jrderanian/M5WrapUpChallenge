@@ -15,6 +15,7 @@
 		47763AC428F3BB23009045A3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AC328F3BB23009045A3 /* Lesson.swift */; };
 		47763AC628F3BBED009045A3 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AC528F3BBED009045A3 /* LessonModel.swift */; };
 		47763AC828F3C5C3009045A3 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47763AC728F3C5C3009045A3 /* LessonDetailView.swift */; };
+		47763ACB28F42E9B009045A3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47763ACA28F42E9B009045A3 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		47763AC328F3BB23009045A3 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		47763AC528F3BBED009045A3 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		47763AC728F3C5C3009045A3 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
+		47763ACA28F42E9B009045A3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47763ACB28F42E9B009045A3 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +48,7 @@
 			children = (
 				47763AAE28F3B983009045A3 /* M5WrapUpChallenge */,
 				47763AAD28F3B983009045A3 /* Products */,
+				47763AC928F42E9B009045A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +113,14 @@
 				47763AC328F3BB23009045A3 /* Lesson.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		47763AC928F42E9B009045A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47763ACA28F42E9B009045A3 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
