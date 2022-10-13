@@ -57,6 +57,7 @@
 		47763AF328F43E6E009045A3 /* Lesson 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lesson 5.mp4"; sourceTree = "<group>"; };
 		47763AF428F43E6F009045A3 /* Lesson 9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lesson 9.mp4"; sourceTree = "<group>"; };
 		47763AF528F43E70009045A3 /* Lesson 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lesson 6.mp4"; sourceTree = "<group>"; };
+		47763B0628F46214009045A3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		47763AA328F3B982009045A3 = {
 			isa = PBXGroup;
 			children = (
+				47763B0628F46214009045A3 /* README.md */,
 				47763AAE28F3B983009045A3 /* M5WrapUpChallenge */,
 				47763AAD28F3B983009045A3 /* Products */,
 				47763AC928F42E9B009045A3 /* Frameworks */,
