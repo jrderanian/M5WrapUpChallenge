@@ -35,11 +35,14 @@ struct ContentView: View {
                 .navigationTitle("Welcome to Swift")
                 .navigationDestination(for: Lesson.self) { lesson in LessonDetailView(lesson: lesson)
                 }
-                .searchable(text: $searchText) {
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {
                     ForEach(searchResults, id: \.self) { result in
                         Text("Are you looking for \(result)?").searchCompletion(result)
                     }
                 }
+            
+            
+            
             //.frame(maxWidth: .infinity)
             // Found this at https://stackoverflow.com/questions/68093282/remove-top-padding-from-list-in-swiftui
             // expands the list to the parent
@@ -51,7 +54,15 @@ struct ContentView: View {
                 }
         }
         .onSubmit(of: .search, runSearch)
-         //     .onChange(of: searchScope) { _ in runSearch() }
+//        .onChange(of: searchText) { index in
+//             if !index.isEmpty {
+//                 searchCollection = lessonModel.titles.filter { $0.name.contains(index) }
+//             } else {
+//                 searchCollection = collections
+//             }
+        
+        
+              .onChange(of: searchText) { _ in runSearch() }
         
         
     }
@@ -66,8 +77,19 @@ struct ContentView: View {
     
     func runSearch() {
         Task {
-            LessonDetailView(lesson: lessonModel.lessons[0])
+            
+            if let url = URL(string: "https://www.google.com"),
+                    UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:])
+            }
         }
+        
+        
+        
+        
+       // Task {
+        //    LessonDetailView(lesson: lessonModel.lessons[0])
+       // }
     }
 }
 
