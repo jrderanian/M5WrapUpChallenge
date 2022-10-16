@@ -13,12 +13,14 @@ class LessonModel: ObservableObject {
     @Published var path = NavigationPath()
     @Published var lessons = [Lesson]()
     @Published var titles = [String]()
+    @Published var lessonByTitle = [String:Lesson]()
     
     init() {
         
         // Parse local included json data
         getLocalData()
         createListOfTitles()
+        //createDictionaryOfLessons()
 
         //FIXME: setup json file on drano.net
         // Download remote json file and parse data
@@ -56,6 +58,13 @@ class LessonModel: ObservableObject {
         //var titles: [String]
         for lesson in lessons {
             titles.append(lesson.title)
+            lessonByTitle[lesson.title] = lesson
+        }
+    }
+    
+    func createDictionaryOfLessons() {
+        for lesson in lessons {
+            lessonByTitle[lesson.title] = lesson
         }
     }
 }
