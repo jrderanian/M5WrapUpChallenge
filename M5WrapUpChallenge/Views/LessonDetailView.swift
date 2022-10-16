@@ -22,20 +22,23 @@ struct LessonDetailView: View {
             //let thisVideo = urlPath + "/Lesson \(lesson.id)"
             //VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "video", withExtension: "mp4")!))
               //  .frame(height: 400)
+            Text(lesson.title).font(.title)
             
-            
+            // run from local resource
             if let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Lesson \(lesson.id)", ofType: "mp4")!){
                 VideoPlayer(player: AVPlayer(url: url))
                     .cornerRadius(10)
                     .frame(maxHeight: 300)
             }
+            
+            // run from remote server
             /*
             if let url = URL(string: lesson.url) {
                 VideoPlayer(player: AVPlayer(url: url))
                     .cornerRadius(10)
                     .frame(maxHeight: 300)
             }
-             */
+            */
             Button("Return to Home"){
                 lessonModel.gotoHomePage()
             }

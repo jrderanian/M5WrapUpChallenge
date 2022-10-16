@@ -13,7 +13,7 @@ struct ContentView: View {
     
     @EnvironmentObject var lessonModel: LessonModel
     
-    @State private var isEditing = false
+    //@State private var isEditing = false
     @State private var searchText = ""
     
     var body: some View {
@@ -22,7 +22,6 @@ struct ContentView: View {
             //Button("Go search") { lessonModel.path.append(lessonModel.lessons[4]) }
             List {
                 ForEach(lessonModel.lessons) { lesson in
-                    //ForEach(searchResults, id: \.self) { lesson in
                     NavigationLink(value: lesson) {
                         VStack(alignment: .leading) {
                             Text(lesson.title)
@@ -65,8 +64,6 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            //SearchBar(text: .constant(""))
-            //ContentView().environmentObject(LessonModel())
             ContentView().environmentObject(LessonModel())
         }
     }
