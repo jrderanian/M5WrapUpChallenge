@@ -13,7 +13,6 @@ struct ContentView: View {
     
     @EnvironmentObject var lessonModel: LessonModel
     
-    //@State private var isEditing = false
     @State private var searchText = ""
     
     var body: some View {
@@ -31,6 +30,8 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(.brown)
+            // MARK: Finally figured out how to get the search to display the LessonDetailView
+            // Append the navigationpath, but has to be within the navigationstack
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {
                 ForEach(searchResults, id: \.self) { result in
                     Button("\(result)", action: {
@@ -62,9 +63,11 @@ struct ContentView: View {
         }
     }
     
+    
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView().environmentObject(LessonModel())
         }
     }
+    
 }

@@ -1,23 +1,11 @@
 #  SearchBar
 
-struct ContentView: View {
-    // 1.
-    let countries = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentia", "Armenia", "Australia", "Austria"]
-    // 2.
-    @State private var searchString = ""
-    
-    var body: some View {
-        NavigationView {
-            List {
-              // 3.   
-              ForEach(searchString == "" ? countries: countries.filter { $0.contains(searchString)}, id: \.self) { country in
-                    Text(country)
-                }
-                .navigationTitle("Countries")
-            }
-          // 4.          
-          .searchable(text: $searchString)
-        }
-    }
-}
+I imported all the data for local access so I could build this while flying across the country
+
+I used navigationStack, navigationDestination, and .searchable
+
+Finally figured out how to append the navigationpath so search would go to the detail view.
+That is going to come in very handy in future projects
+
+
 

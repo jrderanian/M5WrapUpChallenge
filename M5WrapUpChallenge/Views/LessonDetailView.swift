@@ -17,19 +17,16 @@ struct LessonDetailView: View {
         
         VStack{
             
-            // to run locally...
-           // let urlPath = "/Users/drano/Downloads/L5ChallengeAssets"
-            //let thisVideo = urlPath + "/Lesson \(lesson.id)"
-            //VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "video", withExtension: "mp4")!))
-              //  .frame(height: 400)
             Text(lesson.title).font(.title)
             
-            // run from local resource
+            // run from local resource, no access to internet
+            
             if let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Lesson \(lesson.id)", ofType: "mp4")!){
                 VideoPlayer(player: AVPlayer(url: url))
                     .cornerRadius(10)
                     .frame(maxHeight: 300)
             }
+            
             
             // run from remote server
             /*
@@ -43,7 +40,6 @@ struct LessonDetailView: View {
                 lessonModel.gotoHomePage()
             }
         }
-        //Text(lesson.url)
     }
 }
 
