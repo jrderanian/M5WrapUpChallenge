@@ -62,9 +62,11 @@ class LessonModel: ObservableObject {
         }
     }
     
+    /*
     func createDictionaryOfLessons() {
         for lesson in lessons {
             lessonByTitle[lesson.title] = lesson
         }
     }
+     */
 }

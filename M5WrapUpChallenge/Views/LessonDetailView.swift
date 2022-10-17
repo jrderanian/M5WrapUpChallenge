@@ -12,6 +12,7 @@ struct LessonDetailView: View {
     @EnvironmentObject var lessonModel: LessonModel
     
     var lesson: Lesson
+    //let aspectRatio: CGFloat = 478 / 849
     
     var body: some View {
         
@@ -21,12 +22,24 @@ struct LessonDetailView: View {
             
             // run from local resource, no access to internet
             
+            // Original Code I used for VideoPlayer
+            
             if let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Lesson \(lesson.id)", ofType: "mp4")!){
                 VideoPlayer(player: AVPlayer(url: url))
                     .cornerRadius(10)
                     .frame(maxHeight: 300)
             }
             
+            // too big on a 12 mini sideways with recommended solution
+            /*
+            if let url = URL(fileURLWithPath: Bundle.main.path(forResource: "Lesson \(lesson.id)", ofType: "mp4")!){
+                GeometryReader { geo in
+                    VideoPlayer(player: AVPlayer(url: url))
+                        .cornerRadius(10)
+                        .frame(height: geo.size.width * aspectRatio)
+                }
+            }
+            */
             
             // run from remote server
             /*
